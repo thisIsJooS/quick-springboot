@@ -1,4 +1,4 @@
-package com.springstudy.boot;
+package com.springstudy.boot.Nothing;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +10,6 @@ public class HelloController {
     @RequestMapping("/hello")
     @ResponseBody
     public String hello(){
-        return "Hello world";
+        return "Hello woldsd";
     }
 }

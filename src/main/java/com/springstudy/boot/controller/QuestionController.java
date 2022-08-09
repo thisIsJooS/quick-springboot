@@ -1,6 +1,7 @@
 package com.springstudy.boot.controller;
 
 import com.springstudy.boot.domain.Question;
+import com.springstudy.boot.form.AnswerForm;
 import com.springstudy.boot.form.QuestionForm;
 import com.springstudy.boot.repository.QuestionRepository;
 import com.springstudy.boot.service.QuestionService;
@@ -28,7 +29,7 @@ public class QuestionController {
     }
 
     @RequestMapping("/detail/{id}")
-    public String detail(Model model, @PathVariable("id") Integer id){
+    public String detail(Model model, @PathVariable("id") Integer id, AnswerForm answerForm){
         Question question = this.questionService.getQuestion(id);
         model.addAttribute("question", question);
         return "question_detail";

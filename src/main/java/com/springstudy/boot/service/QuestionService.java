@@ -1,6 +1,7 @@
 package com.springstudy.boot.service;
 
 import com.springstudy.boot.domain.Question;
+import com.springstudy.boot.domain.SiteUser;
 import com.springstudy.boot.exception.DataNotFoundException;
 import com.springstudy.boot.repository.QuestionRepository;
 import lombok.RequiredArgsConstructor;
@@ -41,11 +42,12 @@ public class QuestionService {
         }
     }
 
-    public void create(String subject, String content){
+    public void create(String subject, String content, SiteUser user){
         Question q = new Question();
         q.setSubject(subject);
         q.setContent(content);
         q.setCreateDate(LocalDateTime.now());
+        q.setAuthor(user);
         this.questionRepository.save(q);
     }
 

@@ -99,7 +99,7 @@ public class QuestionTest {
         // 답변 데이터 리스트는 q객체를 조회할때 가져오지 않고 q.getAnswerList() 메서드를 호출하는 시점에 가져오기 때문이다.
         // 이 문제는 테스트 코드에서만 발생한다. 실제 서버에서 JPA프로그램을 실행할 때는 DB세션이 종료되지 않기 때문이다.
         // 해결방법은 함수 위에 @Transactional 붙이기.
-        // 이 어노테이션을 사용하면 메서드가 종료될 때까지 DB세션이 유지돤다. 
+        // 이 어노테이션을 사용하면 메서드가 종료될 때까지 DB세션이 유지돤다.
 //        Optional<Question> oq5 = this.questionRepository.findById(2);
 //        assertTrue(oq5.isPresent());
 //        Question qq = oq5.get();

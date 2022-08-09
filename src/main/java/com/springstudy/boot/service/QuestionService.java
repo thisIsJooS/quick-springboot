@@ -4,6 +4,9 @@ import com.springstudy.boot.domain.Question;
 import com.springstudy.boot.exception.DataNotFoundException;
 import com.springstudy.boot.repository.QuestionRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -15,8 +18,13 @@ import java.util.Optional;
 public class QuestionService {
     private final QuestionRepository questionRepository;
 
-    public List<Question> getList(){
-        return this.questionRepository.findAll();
+//    public List<Question> getList(){
+//        return this.questionRepository.findAll();
+//    }
+
+    public Page<Question> getList(int page){
+        Pageable pageable = PageRequest.of(page, 10);
+        return this.questionRepository.findAll(pageable);
     }
 
     public Question getQuestion(Integer id){
@@ -36,4 +44,6 @@ public class QuestionService {
         q.setCreateDate(LocalDateTime.now());
         this.questionRepository.save(q);
     }
+
+
 }

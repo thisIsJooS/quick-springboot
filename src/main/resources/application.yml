@@ -20,6 +20,14 @@ spring:
         format_sql: true
         show_sql: true
 
+  OAuth2:
+    google:
+      url: https://accounts.google.com/o/oauth2/auth
+      client-id: 713262651990-bh58ql4ljag5a91pgat87gsc4f8a43qc.apps.googleusercontent.com
+      client-secret: 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
+      callback-url: http://127.0.0.1:8080/auth/google/callback
+      scope: https://www.googleapis.com/auth/userinfo.email
+
 
 
 

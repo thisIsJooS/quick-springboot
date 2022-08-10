@@ -1,4 +1,4 @@
-package com.springstudy.boot;
+package com.springstudy.boot.config;
 
 import com.springstudy.boot.service.UserSecurityService;
 import lombok.RequiredArgsConstructor;
